@@ -49,77 +49,12 @@
       }
     }));
     imageryViewModels.push(new Cesium.ProviderViewModel({
-      name: 'Positron',
-      tooltip: 'CartoDB Positron basemap',
-      iconUrl: 'http://a.basemaps.cartocdn.com/light_all/5/15/12.png',
-      creationFunction: function() {
-        return new Cesium.UrlTemplateImageryProvider({
-          url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
-          credit: CartoAttribution,
-          minimumLevel: 0,
-          maximumLevel: 18
-        });
-      }
-    }));
-    imageryViewModels.push(new Cesium.ProviderViewModel({
-      name: 'Positron without labels',
-      tooltip: 'CartoDB Positron without labels basemap',
-      iconUrl: 'http://a.basemaps.cartocdn.com/rastertiles/light_nolabels/5/15/12.png',
-      creationFunction: function() {
-        return new Cesium.UrlTemplateImageryProvider({
-          url: 'https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png',
-          credit: CartoAttribution,
-          minimumLevel: 0,
-          maximumLevel: 18
-        });
-      }
-    }));
-    imageryViewModels.push(new Cesium.ProviderViewModel({
       name: 'Dark Matter',
       tooltip: 'CartoDB Dark Matter basemap',
       iconUrl: 'http://a.basemaps.cartocdn.com/rastertiles/dark_all/5/15/12.png',
       creationFunction: function() {
         return new Cesium.UrlTemplateImageryProvider({
           url: 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png',
-          credit: CartoAttribution,
-          minimumLevel: 0,
-          maximumLevel: 18
-        });
-      }
-    }));
-    imageryViewModels.push(new Cesium.ProviderViewModel({
-      name: 'Dark Matter without labels',
-      tooltip: 'CartoDB Dark Matter without labels basemap',
-      iconUrl: 'http://a.basemaps.cartocdn.com/rastertiles/dark_nolabels/5/15/12.png',
-      creationFunction: function() {
-        return new Cesium.UrlTemplateImageryProvider({
-          url: 'https://{s}.basemaps.cartocdn.com/rastertiles/dark_nolabels/{z}/{x}/{y}.png',
-          credit: CartoAttribution,
-          minimumLevel: 0,
-          maximumLevel: 18
-        });
-      }
-    }));
-    imageryViewModels.push(new Cesium.ProviderViewModel({
-      name: 'Voyager',
-      tooltip: 'CartoDB Voyager basemap',
-      iconUrl: 'http://a.basemaps.cartocdn.com/rastertiles/voyager_labels_under/5/15/12.png',
-      creationFunction: function() {
-        return new Cesium.UrlTemplateImageryProvider({
-          url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png',
-          credit: CartoAttribution,
-          minimumLevel: 0,
-          maximumLevel: 18
-        });
-      }
-    }));
-    imageryViewModels.push(new Cesium.ProviderViewModel({
-      name: 'Voyager without labels',
-      tooltip: 'CartoDB Voyager without labels basemap',
-      iconUrl: 'http://a.basemaps.cartocdn.com/rastertiles/voyager_nolabels/5/15/12.png',
-      creationFunction: function() {
-        return new Cesium.UrlTemplateImageryProvider({
-          url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png',
           credit: CartoAttribution,
           minimumLevel: 0,
           maximumLevel: 18

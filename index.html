@@ -76,7 +76,7 @@
 
         // Transformation pour positionner le modèle
         tileset.readyPromise.then(function() {
-            const position = Cesium.Cartesian3.fromDegrees(longitude, latitude, 500);
+            const position = Cesium.Cartesian3.fromDegrees(longitude, 43.44, 500);
             const matrix = Cesium.Transforms.eastNorthUpToFixedFrame(position);
             tileset.root.transform = matrix;
         

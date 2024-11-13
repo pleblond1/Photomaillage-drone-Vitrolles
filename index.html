@@ -90,6 +90,7 @@
         // Fonction pour centrer la vue sur le modèle lorsque le bouton est cliqué
         function centerViewOnModel() {
             viewer.camera.flyTo({
+                console.log("Bouton cliqué : recentrage en cours"); // Vérifier si la fonction est appelée
                 destination: Cesium.Cartesian3.fromDegrees(5.245701, 43.445699, 131.4 + 500), // Ajustez l'altitude pour un meilleur angle de vue
                 orientation: {
                     heading: Cesium.Math.toRadians(0),

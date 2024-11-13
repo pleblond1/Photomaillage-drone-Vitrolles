@@ -69,23 +69,7 @@
 
         // Ajouter le modèle à la scène
         viewer.scene.primitives.add(tileset);
-        });
         
-        function centerViewOnModel() {
-            viewer.camera.flyTo({
-                destination: Cesium.Cartesian3.fromDegrees(
-                    modelPosition.longitude,
-                    modelPosition.latitude,
-                    modelPosition.height + 500 // Ajustez l'altitude pour un meilleur angle de vue
-                ),
-                orientation: {
-                    heading: Cesium.Math.toRadians(0),
-                    pitch: Cesium.Math.toRadians(-30),
-                    roll: 0.0
-                },
-                duration: 2 // Temps de transition en secondes
-            });
-        }
         // Définir la position géographique
         const latitude = 43.445699; // 
         const longitude = 5.245701; // 
@@ -96,7 +80,19 @@
             const position = Cesium.Cartesian3.fromDegrees(longitude, latitude, altitude);
             const matrix = Cesium.Transforms.eastNorthUpToFixedFrame(position);
             tileset.root.transform = matrix;
-
+            
+        // Fonction pour centrer la vue sur le modèle lorsque le bouton est cliqué
+        function centerViewOnModel() {
+            viewer.camera.flyTo({
+                destination: Cesium.Cartesian3.fromDegrees(longitude, latitude, altitude + 500), // Ajustez l'altitude pour un meilleur angle de vue
+                orientation: {
+                    heading: Cesium.Math.toRadians(0),
+                    pitch: Cesium.Math.toRadians(-30),
+                    roll: 0.0
+                },
+                duration: 2 // Temps de transition en secondes
+            });
+        }
             // Centrer la caméra sur le modèle
             viewer.zoomTo(tileset);
         }).otherwise(function(error) {

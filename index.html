@@ -80,10 +80,8 @@
             const matrix = Cesium.Transforms.eastNorthUpToFixedFrame(position);
             tileset.root.transform = matrix;
         
-            // Centrer la caméra sur le modèle au démarrage
-            //viewer.zoomTo(tileset);
-        //}).otherwise(function(error) {
-            //console.error(error);
+        // Centrer la caméra sur le modèle au démarrage
+        viewer.zoomTo(tileset);
         //});   
         
         // Fonction pour centrer la vue sur le modèle lorsque le bouton est cliqué

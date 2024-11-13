@@ -21,12 +21,37 @@
             width: 100%;
             height: 100vh;
         }
+
+        #toolbar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            background: rgba(42, 42, 42, 0.8);
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+        }
+        #toolbar button {
+            color: white;
+            background-color: #333;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin: 5px;
+        }
+        #toolbar button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
     <img id="logo" src="https://www.opsia.fr/assets/images/opsia-logo.png" alt="Logo">
     <div id="cesiumContainer" style="width: 100%; height: 100vh;"></div>
     <div id="cesiumContainer"></div>
+    <div id="toolbar">
+        <button onclick="centerViewOnModel()">Center View on Model</button></div>  
     <script>
         // Ajoutez le token Cesium Ion ici
         Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjNWNkYTYzYS1hODNhLTQwZjEtYjdmMi0yNTY0NGFkYjJlMGMiLCJpZCI6MjQ4NDU4LCJpYXQiOjE3MjkwNjIwMDZ9.gan_GuBjIjADDeC_ttcN1OZSnfePlAtb1tE23vcDzbU';
@@ -44,7 +69,23 @@
 
         // Ajouter le modèle à la scène
         viewer.scene.primitives.add(tileset);
-
+        });
+        
+        function centerViewOnModel() {
+            viewer.camera.flyTo({
+                destination: Cesium.Cartesian3.fromDegrees(
+                    modelPosition.longitude,
+                    modelPosition.latitude,
+                    modelPosition.height + 500 // Ajustez l'altitude pour un meilleur angle de vue
+                ),
+                orientation: {
+                    heading: Cesium.Math.toRadians(0),
+                    pitch: Cesium.Math.toRadians(-30),
+                    roll: 0.0
+                },
+                duration: 2 // Temps de transition en secondes
+            });
+        }
         // Définir la position géographique
         const latitude = 43.445699; // 
         const longitude = 5.245701; // 

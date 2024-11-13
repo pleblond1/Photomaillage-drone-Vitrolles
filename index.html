@@ -98,6 +98,10 @@
                     roll: 0.0
                 },
                 duration: 2 // Temps de transition en secondes
+            }).then(() => {
+                console.log("Caméra recentrée avec succès");
+            }).otherwise((error) => {
+                console.error("Erreur lors du recentrage de la caméra:", error);
             });
         }
     </script>
